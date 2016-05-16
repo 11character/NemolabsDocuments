@@ -8,7 +8,7 @@
 <span id="ready"></span>
 ## 준비하기
 
--  Nodejs express 웹 서버가 있어야 합니다.
+-  Nodejs ( ^4.4.4 || ^5.11.1  ), express (^4.13.3) 웹 서버가 있어야 합니다.
 
 - 파일을 준비합니다. (원격 저장소를 지원하지 않습니다.)  
     파일은 app.js 와 package.json 으로 간단하게 구성되어 있습니다.
