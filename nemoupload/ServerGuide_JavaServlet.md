@@ -34,7 +34,8 @@
     ...
     ```
 
-- nemoupload.jar 파일을 라이브러리에 추가하여 web.xml에 Servlet설정을 합니다.  
+- nemoupload.jar 파일을 라이브러리에 추가합니다. (/WEB-INF/lib/)  
+    추가한 다음에 web.xml에 Servlet 설정을 합니다.  
     ```
     [xml]
     ...
