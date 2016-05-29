@@ -134,25 +134,27 @@ Internet Explorer 8, 9 에서는 파일을 업로드하는 기본적인 기능�
 
     사용하고 있는 웹 서버가 ` <FORM ENCTYPE="multipart/form-data" ACTION="_URL_" METHOD=POST> ` 파일 업로드를 처리할 수 있다면 그대로 사용할 수 있습니다. (_HTML 표준 파일 업로드 방식인 [RFC-1867][] 규격으로 업로드 합니다._)
 
-    Nodejs express 서버를 사용하고 있는 경우, **[chunk를 처리하기 위한 모듈][nodejs-express]**을 사용할 수 있습니다.
+    사용환경에 따라서 **chunk를 처리하기 위한 모듈을 사용할 수 있습니다.**  
+    Nodejs express: **[document][nodejs-express]**  
+    Java Servlet: **[document][java-servlet]**
 
     Nemoupload 는 파일과 함께 기본 paramter 값을 전달합니다.
 
-    - chunkNumber : chunk 의 번호 입니다. 1 부터 시작합니다. 기본값은 1 입니다.
+    - chunkNumber: chunk 의 번호 입니다. 1 부터 시작합니다. 기본값은 1 입니다.
 
-    - chunkCount : chunk 의 개수 입니다. 1 부터 시작합니다. 기본값은 1 입니다.
+    - chunkCount: chunk 의 개수 입니다. 1 부터 시작합니다. 기본값은 1 입니다.
 
-    - fileID : 파일의 고유한 ID 입니다. 웹 페이지에서 목록 관리를위해 사용한 **[fileinfo.id][fileinfo-id]** 와 동일합니다.
+    - fileID: 파일의 고유한 ID 입니다. 웹 페이지에서 목록 관리를위해 사용한 **[fileinfo.id][fileinfo-id]** 와 동일합니다.
 
     chunk 를 사용하게 되면 ` Request header ` 에 ` Nemoupload ` 항목이 담기게 됩니다.
 
-    - Nemoupload.chunkNumber : chunk 의 번호 입니다. 1 부터 시작합니다.
+    - Nemoupload.chunkNumber: chunk 의 번호 입니다. 1 부터 시작합니다.
 
-    - Nemoupload.chunkCount : chunk 의 개수 입니다. 1 부터 시작합니다.
+    - Nemoupload.chunkCount: chunk 의 개수 입니다. 1 부터 시작합니다.
 
-    - Nemoupload.chunkSize : chunk 를 나눈 크기 입니다. **[option.chunk][option-chunk]** 값과 동일합니다.
+    - Nemoupload.chunkSize: chunk 를 나눈 크기 입니다. **[option.chunk][option-chunk]** 값과 동일합니다.
 
-    - Nemoupload.fileID : 파일의 고유한 ID 입니다. 웹 페이지에서 목록 관리를위해 사용한 **[fileinfo.id][fileinfo-id]** 와 동일합니다.
+    - Nemoupload.fileID: 파일의 고유한 ID 입니다. 웹 페이지에서 목록 관리를위해 사용한 **[fileinfo.id][fileinfo-id]** 와 동일합니다.
 
     처리 결과는 JSON 으로 반환해야 합니다.  
     _**[sucess listener][option-listener-success]** 가 호출되는 시점에서 **[fileInfo.response][fileinfo-response]** 에서 결과값을 받을 수 있습니다._  
@@ -377,17 +379,17 @@ Internet Explorer 8, 9 에서는 파일을 업로드하는 기본적인 기능�
 Nemoupload 객체는 플러그인을 생성하는 기본 객체입니다.  
 전역에서 접근이 가능합니다.
 
-- Nemoupload.WAITING : 업로드 전, 기본 상태.
+- Nemoupload.WAITING: 업로드 전, 기본 상태.
 
-- Nemoupload.START : 업로드를 시작.
+- Nemoupload.START: 업로드를 시작.
 
-- Nemoupload.RUN : 전송중.
+- Nemoupload.RUN: 전송중.
 
-- Nemoupload.SUCCESS : 업로드 완료.
+- Nemoupload.SUCCESS: 업로드 완료.
 
-- Nemoupload.CANCEL : 업로드 취소.
+- Nemoupload.CANCEL: 업로드 취소.
 
-- Nemoupload.FAIL : 업로드 실패.
+- Nemoupload.FAIL: 업로드 실패.
 
 - Nemoupload.XHR_SUPPORT: XMLHttpReauest 를 사용하여 비동기 업로드가 가능하면 true 를 가집니다.
 
@@ -620,5 +622,6 @@ Nemoupload 객체는 플러그인을 생성하는 기본 객체입니다.
 [fileinfo-response]: #fileinfo-response
 [setOptions]: #setOptions
 [서버 설정]: #start-server
-[nodejs-express]: uploadserver.html
+[nodejs-express]: ServerGuide_NodeJS.html
+[java-servlet]: ServerGuide_JavaServlet.html
 [RFC-1867]: https://www.ietf.org/rfc/rfc1867.txt
